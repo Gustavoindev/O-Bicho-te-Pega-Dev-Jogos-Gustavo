@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b2r6cslw60j4h"]
+
+[ext_resource type="Texture2D" uid="uid://drfaqtjpqjj4y" path="res://img/brazilian_eerie_house_pixel_01.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://c0q6l5ke7ij1p" path="res://main.gd" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://cpln1pci5dbmq" path="res://img/boy_sprite_sheet_03.png" id="2_epypp"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_0hol4"]
+
+[node name="Control" type="Control" unique_id=226148291]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_epypp")
+
+[node name="Board" type="Label" parent="." unique_id=284283124]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 190.0
+offset_right = 753.0
+offset_bottom = 268.0
+text = "BOARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Label" parent="." unique_id=1563691514]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 52.0
+offset_right = 749.0
+offset_bottom = 141.0
+text = "Status:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndGame" type="Label" parent="." unique_id=1387151493]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 49.0
+offset_right = 349.0
+offset_bottom = 131.0
+text = "EndGame:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Comer" type="Button" parent="." unique_id=245038573]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 540.0
+offset_right = 543.0
+offset_bottom = 618.0
+mouse_filter = 2
+text = "Comer"
+
+[node name="Recusar" type="Button" parent="." unique_id=1905391995]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 385.0
+offset_right = 602.0
+offset_bottom = 482.0
+mouse_filter = 2
+text = "Recusar"
+icon = SubResource("ImageTexture_0hol4")
+
+[node name="Resetar" type="Button" parent="." unique_id=143885674]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 424.0
+offset_right = 854.0
+offset_bottom = 489.0
+mouse_filter = 2
+text = "Resetar"
+
+[node name="Scene" type="Node2D" parent="." unique_id=1838341370]
+
+[node name="Scenario" type="Sprite2D" parent="." unique_id=870556655]
+show_behind_parent = true
+position = Vector2(577, 322)
+scale = Vector2(0.40379214, 0.40125003)
+texture = ExtResource("1_0e48y")
+
+[node name="Boy" type="Sprite2D" parent="." unique_id=1370002267]
+position = Vector2(300.5, 444.00006)
+scale = Vector2(0.13804, 0.161875)
+texture = ExtResource("2_epypp")
+hframes = 3
+
+[connection signal="button_up" from="Comer" to="." method="_on_comer_button_up"]
+[connection signal="button_up" from="Recusar" to="." method="_on_recusar_button_up"]
+[connection signal="button_up" from="Resetar" to="." method="_on_resetar_button_up"]
